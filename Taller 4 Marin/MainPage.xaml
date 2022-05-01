@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Taller_4_Marin.MainPage">
+
+    <StackLayout>
+        <Image x:Name="imgBanner" HeightRequest="300" Source="xamarin.jpg"/>
+        <Label Text="SQLite" FontSize="Large" FontAttributes="Bold" TextColor="Gray" HorizontalTextAlignment="Center"/>
+        <Entry x:Name="txtIdPersona" Placeholder="Ingrese el Id de la Persona para consultar y eliminar"/>
+        <Entry x:Name="txtNombre" Placeholder="Ingrese el nombre"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button x:Name="btnAgregar" WidthRequest="200" Text="Agregar" Clicked="btnAgregar_Clicked"/>
+            <Button x:Name="btnConsultar" WidthRequest="200" Text="Consultar" Clicked="btnConsultar_Clicked"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button x:Name="btnActualizar" WidthRequest="200" Text="Actualizar" Clicked="btnActualizar_Clicked"/>
+            <Button x:Name="btnEliminar" WidthRequest="200" Text="Eliminar" Clicked="btnEliminar_Clicked"/>
+        </StackLayout>
+        <ListView x:Name="listViewPersonas">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nombre}" Detail="{Binding IdPersona}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
